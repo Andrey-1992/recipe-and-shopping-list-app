@@ -1,9 +1,14 @@
 export class Ingredient {
-  public name: string;
-  public amount: string;
+  // This approach works the base figure
+  // public name: string;
+  // public amount: string;
 
-  constructor(name: string, amount: string) {
-    this.name = name;
-    this.amount = amount;
-  }
+  // constructor(name: string, amount: string) {
+  //   this.name = name;
+  //   this.amount = amount;
+  // }
+
+  //TypeScript offers an oppotunity to create by defaul objects:
+  constructor(public name: string, public amount: string) {}
+
 }
