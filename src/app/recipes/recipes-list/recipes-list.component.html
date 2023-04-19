@@ -11,7 +11,9 @@
         <p class="list-group-item-text">{{ recipe.description }}</p>
       </div>
       <span class="pull-right">
-        <img src="{{ recipe.imgPath }}" alt="" class="img-responsive" style="max-height: 50px;">
+<!-- //String interpolation        <img src="{{ recipe.imgPath }}" alt="{{ recipe.name }}" class="img-responsive" style="max-height: 50px;"> -->
+<!-- Property Binding -->
+       <img [src]="recipe.imgPath" alt="{{ recipe.name }}" class="img-responsive" style="max-height: 50px;"> 
       </span>
     </a>
     <app-recipes-item></app-recipes-item>
