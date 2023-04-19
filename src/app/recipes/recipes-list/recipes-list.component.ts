@@ -11,5 +11,8 @@ export class RecipesListComponent {
   recipes: Recipe[] = [
     new Recipe('A test recipe','Simple Test','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg')
   ];
+  test0 = this.recipes[0].name
+  test1 = this.recipes[0].name
+  test2 = this.recipes[0].imgPath
 
 }
