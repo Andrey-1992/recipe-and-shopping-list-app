@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Ingredient } from '../shared/ingredient.modle';
 
 @Component({
   selector: 'app-shopping-list',
@@ -6,6 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent {
-  ingredients = [];
+  ingredients:Ingredient[] = [];
 
 }
