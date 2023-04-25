@@ -10,9 +10,10 @@ export class HeaderComponent {
   menuButtonValueOption:string ;
 
   getMenuOptionValue(menuOption) {
-    this.menuButtonValueOption = menuOption
-    // console.log('Testing values: ' + this.menuButtonValueOption)
-    console.log(menuOption.srcElement.innerText)
+    // console.log(menuOption.srcElement.innerText)
+
+    this.menuButtonValueOption = menuOption.srcElement.innerText;
+    console.log('Testing values: ' + this.menuButtonValueOption)
 
   }
 }
