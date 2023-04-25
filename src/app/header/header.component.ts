@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   collapsed = true;
+  buttonType:string ;
+
+  getMenuOption() {
+    console.log('TESTING Button')
+  }
 }
