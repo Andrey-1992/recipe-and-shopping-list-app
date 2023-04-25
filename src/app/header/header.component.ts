@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   collapsed = true;
-  buttonType:string ;
+  menuButtonValueOption:string ;
 
-  getMenuOption() {
-    console.log('TESTING Button')
+  getMenuOptionValue(menuOption) {
+    this.menuButtonValueOption = menuOption
+    console.log('Testing values: ' + this.menuButtonValueOption)
   }
 }
