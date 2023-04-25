@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipe-and-shopping-list-app';
-  menuButtonValue:string = 'Recipes';
+  menuButtonValue:string = '';
 
   getMenuButtonValue(menuValue) {
     this.menuButtonValue = menuValue;
