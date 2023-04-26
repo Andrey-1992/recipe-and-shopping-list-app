@@ -9,7 +9,7 @@ export class HeaderComponent {
   collapsed = true;
   menuButtonValueOption:string ;
 
-  @Output() menuButtonValue = new EventEmitter<string>();
+  @Output('testOutput') menuButtonValue = new EventEmitter<string>();
 
   getMenuOptionValue(menuOption) {
     console.log(menuOption.srcElement.innerText)
@@ -17,9 +17,6 @@ export class HeaderComponent {
     this.menuButtonValue.emit(espanol)
 
   }
-
-
-
 
   // getMenuOptionValue(menuOption) {
   //   // console.log(menuOption.srcElement.innerText)
