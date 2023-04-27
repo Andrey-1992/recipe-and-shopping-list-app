@@ -7,7 +7,7 @@ import { Recipe } from '../../recipe.model';
   styleUrls: ['./recipes-item.component.css']
 })
 export class RecipesItemComponent {
-  @Input('childRecipes') recipes: [Recipe];
+  @Input('childRecipe') recipe: Recipe;
 
   ngOnInit() {
     // console.log(this.recipes)
