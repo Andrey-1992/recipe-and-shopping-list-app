@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./recipes-item.component.css']
 })
 export class RecipesItemComponent {
-  @Input('childRecipe') recipes: {name: string, description:string, imgPath:string} ;
+  @Input('childRecipes') recipes: [{name: string, description:string, imgPath:string}] ;
 
   // ngOnInit() {
   // }
