@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipe-and-shopping-list-app';
-  menuButtonValue:string = 'Recipes';
+  loadedFeature:string = 'Recipes';
 
   onNavigate(feature: string) {
-    this.menuButtonValue = feature;
+    this.loadedFeature = feature;
   }
 }
