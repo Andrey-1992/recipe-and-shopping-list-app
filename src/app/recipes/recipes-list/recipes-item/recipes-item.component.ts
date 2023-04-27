@@ -7,11 +7,10 @@ import { Recipe } from '../../recipe.model';
   styleUrls: ['./recipes-item.component.css']
 })
 export class RecipesItemComponent {
-  // @Input('childRecipes') recipes: [{name: string, description:string, imgPath:string}];
   @Input('childRecipes') recipes: [Recipe];
 
   ngOnInit() {
-    console.log(this.recipes)
+    // console.log(this.recipes)
   }
   
 }

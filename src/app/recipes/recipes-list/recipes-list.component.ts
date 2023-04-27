@@ -12,9 +12,4 @@ export class RecipesListComponent {
     new Recipe('A test recipe 1','Simple Test 1','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg'),
     new Recipe('A test recipe 2','Simple Test 2','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg')
   ];
-
-  // test0 = this.recipes[0].name
-  // test1 = this.recipes[0].name
-  // test2 = this.recipes[0].imgPath
-
 }
