@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'recipe-and-shopping-list-app';
   menuButtonValue:string = 'Recipes';
 
-  getMenuButtonValue(menuValue) {
+  onNavigate(menuValue) {
     this.menuButtonValue = menuValue;
   }
 }
