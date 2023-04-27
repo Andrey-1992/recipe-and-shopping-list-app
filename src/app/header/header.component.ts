@@ -7,20 +7,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   collapsed = true;
-  menuButtonValueOption:string ;
-  @Output('testOutputAlias') menuButtonValue = new EventEmitter<string>();
+  @Output('internalFeatureSelected') featureSelected = new EventEmitter<string>();
 
-  onSelect(menuOption) {
-    console.log(menuOption.srcElement.innerText)
-    const espanol = menuOption.srcElement.innerText
-    this.menuButtonValue.emit(espanol)
+  onSelect(feature) {
+    console.log(feature.srcElement.innerText)
+    const convertedValue = feature.srcElement.innerText
+    this.featureSelected.emit(convertedValue)
   }
   
 }
-
-// @Output('testOutputAlias') menuButtonValue = new EventEmitter<string>();
-// getMenuOptionValue(menuOption) {
-//   console.log(menuOption.srcElement.innerText)
-//   const espanol = menuOption.srcElement.innerText
-//   this.menuButtonValue.emit(espanol)
-// }
