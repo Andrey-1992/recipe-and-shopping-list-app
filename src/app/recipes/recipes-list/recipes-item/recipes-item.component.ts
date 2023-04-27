@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
 export class RecipesItemComponent {
   @Input('childRecipes') recipes: [{name: string, description:string, imgPath:string}] ;
 
-  // ngOnInit() {
-  // }
+  ngOnInit() {
+    console.log(this.recipes)
+  }
   
 }
