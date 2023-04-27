@@ -6,5 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./recipes-item.component.css']
 })
 export class RecipesItemComponent {
-  @Input('childRecipe') recipe ;
+  @Input('childRecipe') recipes: any ;
+
+  ngOnInit() {
+    console.log(recipes)
+  }
 }
