@@ -13,4 +13,8 @@ export class RecipesItemComponent {
     // console.log(this.recipes)
   }
   
+  captureRecipeValues() {
+    console.log('test')
+  }
+  
 }
