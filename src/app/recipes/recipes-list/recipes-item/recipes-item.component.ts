@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Recipe } from '../../recipe.model';
 
 @Component({
@@ -8,13 +8,14 @@ import { Recipe } from '../../recipe.model';
 })
 export class RecipesItemComponent {
   @Input('childRecipe') recipe: Recipe;
+  @Output('internalRecipeValues') recipeValues: new EventEmitter<Recipe>();
 
   ngOnInit() {
     // console.log(this.recipes)
   }
   
   captureRecipeValues() {
-    console.log('test')
+    // console.log(this.recipe)
   }
   
 }
