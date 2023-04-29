@@ -14,9 +14,9 @@ export class RecipesItemComponent {
     // console.log(this.recipes)
   }
   
-  captureRecipeValues() {
-    // this.recipeValues = this.recipe;
-    // console.log(this.recipe)
+  captureRecipeValues(recipe) {
+    this.recipeValues = recipe;
+    console.log(this.recipeValues)
   }
   
 }
