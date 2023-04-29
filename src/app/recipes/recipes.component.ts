@@ -7,13 +7,11 @@ import { Recipe } from './recipe.model';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent {
-
-  recipeValue:Recipe;
+  recipe:Recipe;
 
   onSelectedRecipe(recipeValue) {
-    this.recipeValue = recipeValue;
-    console.log(this.recipeValue)
-    // this.recipeValues.emit(recipeValue);
+    this.recipe = recipeValue;
+    console.log(this.recipe)
   }
 
 }
