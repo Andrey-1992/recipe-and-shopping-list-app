@@ -8,6 +8,8 @@
   <div class="col-xs-12">
     <app-recipes-item 
     *ngFor="let recipe of recipes"  
-    [childRecipe]="recipe"></app-recipes-item>
+    [childRecipe]="recipe"
+    (internalFeatureSelected)="onNavigate($event)>
+  </app-recipes-item>
   </div>
 </div>

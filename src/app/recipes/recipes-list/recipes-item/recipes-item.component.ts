@@ -7,15 +7,21 @@ import { Recipe } from '../../recipe.model';
   styleUrls: ['./recipes-item.component.css']
 })
 export class RecipesItemComponent {
+  testValue:Recipe;
   @Input('childRecipe') recipe: Recipe;
-  @Output('selectedRecipeValue') recipeValues = new EventEmitter();
+  @Output('selectedRecipeValue') recipeValues = new EventEmitter<Recipe>();
 
   ngOnInit() {
     // console.log(this.recipes)
   }
   
   captureRecipeValues(recipe) {
-    this.recipeValues.emit(this.recipe)
+    // this.recipeValues = recipe;
+    this.testValue =this.recipe;
+    
+    this.recipeValues.emit(this.testValue);
+
+    console.log(this.recipe)
     console.log(this.recipeValues)
   }
   
