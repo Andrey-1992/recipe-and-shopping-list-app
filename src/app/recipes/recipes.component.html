@@ -1,10 +1,12 @@
 <div class="row">
   <div class="col-md-5">
     <app-recipes-list
-      (selectedRecipeValue)="onSelectedRecipe($event)>
+      (selectedRecipeValue)="onSelectedRecipe($event)">
     </app-recipes-list>
   </div>
   <div class="col-md-7">
-    <app-recipes-detail></app-recipes-detail>
+    <app-recipes-detail 
+    [childRecipe]="recipe">
+    </app-recipes-detail>
   </div>
 </div>
