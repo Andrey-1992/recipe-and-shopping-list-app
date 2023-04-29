@@ -8,8 +8,4 @@ import { Recipe } from './../recipe.model';
 export class RecipesDetailComponent {
   @Input('childRecipe') recipe: Recipe;
 
-  ngOnChange() {
-    console.log(this.recipe)
-  }
-
 }

@@ -11,7 +11,6 @@ export class RecipesComponent {
 
   onSelectedRecipe(recipeValue) {
     this.recipe = recipeValue;
-    console.log(this.recipe)
   }
 
 }
