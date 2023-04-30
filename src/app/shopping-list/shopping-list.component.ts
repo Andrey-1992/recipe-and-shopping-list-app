@@ -12,4 +12,8 @@ export class ShoppingListComponent {
     new Ingredient("Tomatoes 🍅 ", "3")
   ];
 
+  onPassedValue(ingredientObject) {
+    console.log(ingredientObject)
+  }
+
 }
