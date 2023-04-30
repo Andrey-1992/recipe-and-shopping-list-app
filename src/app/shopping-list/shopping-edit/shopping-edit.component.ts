@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent {
-  testInput(event: any) {
-    console.log(event.target.value)
+  serverName:string;
+
+  testInput(event: Event) {
+    this.serverName = (<HTMLInputElement>event.target).value
+    console.log(this.serverName)
   }
 
 }
