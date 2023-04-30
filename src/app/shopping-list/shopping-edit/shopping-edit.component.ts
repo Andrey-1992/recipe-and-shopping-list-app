@@ -24,6 +24,7 @@ export class ShoppingEditComponent {
   }
 
   submitIngredients() {
+    event.preventDefault()
     this.outputIngValue.emit({
       name: this.ingredientName,
       amount: this.ingredientAmount
