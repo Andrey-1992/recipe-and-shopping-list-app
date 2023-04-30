@@ -7,7 +7,7 @@
           type="text" 
           id="name" 
           class="form-control"
-          (input)="incomningNameInput($event)">
+          #localIngredientName>
       </div>
       <div class="col-sm-5 form-group">
         <label for="amount">Amount</label>
@@ -21,7 +21,7 @@
         <div class="col-xs-12">
           <button 
             class="btn btn-success"
-            (click)="submitIngredients()">Add</button>
+            (click)="submitIngredients(localIngredientName)">Add</button>
           <!-- <button class="btn btn-danger" type="button">Delete</button>
           <button class="btn btn-primary" type="button">Clear</button> -->
         </div>

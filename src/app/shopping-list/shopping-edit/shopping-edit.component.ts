@@ -23,8 +23,9 @@ export class ShoppingEditComponent {
     // console.log(this.ingredientAmount)
   }
 
-  submitIngredients() {
+  submitIngredients(localIngredientName) {
     event.preventDefault()
+    console.log(localIngredientName.value)
     this.outputIngValue.emit({
       name: this.ingredientName,
       amount: this.ingredientAmount
