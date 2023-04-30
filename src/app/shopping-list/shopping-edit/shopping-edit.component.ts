@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 import { Ingredient } from '../../shared/ingredient.modle';
 
 @Component({
