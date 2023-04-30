@@ -13,7 +13,8 @@ export class ShoppingListComponent {
   ];
 
   onPassedValue(ingredientObject) {
-    console.log(ingredientObject)
+    // console.log(ingredientObject);
+    this.ingredients.push(new Ingredient(ingredientObject.name, ingredientObject.amount));
   }
 
 }
