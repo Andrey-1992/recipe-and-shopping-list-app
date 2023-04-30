@@ -6,11 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent {
-  serverName:string;
+  ingredientName:string;
+  ingredientAmount:string;
 
-  testInput(event: Event) {
-    this.serverName = (<HTMLInputElement>event.target).value
-    console.log(this.serverName)
+  incomningNameInput(event: Event) {
+    this.ingredientName = (<HTMLInputElement>event.target).value
+    console.log(this.ingredientName)
+  }
+
+  incomningAmountInput(event: Event) {
+    this.ingredientAmount = (<HTMLInputElement>event.target).value
+    console.log(this.ingredientAmount)
   }
 
 }
