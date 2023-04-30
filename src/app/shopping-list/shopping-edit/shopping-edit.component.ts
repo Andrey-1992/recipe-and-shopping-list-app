@@ -10,14 +10,14 @@ import { Ingredient } from '../../shared/ingredient.modle';
 })
 export class ShoppingEditComponent {
   @Output('ingredientObject') outputIngValue = new EventEmitter<Ingredient>();
-  @ViewChild('localIngredientAmount') localIngredientAmount = ElementRef;
+  @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
   
-  submitIngredients(localIngredientName:HTMLInputElement, localIngredientAmount:HTMLInputElement,) {
+  submitIngredients(localIngredientName:HTMLInputElement) {
     event.preventDefault()
-    console.log(localIngredientName.value, localIngredientAmount.value)
+    // console.log(localIngredientName.value)
     this.outputIngValue.emit({
       name: localIngredientName.value,
-      amount: localIngredientAmount.value
+      amount: this.localIngredientAmount.nativeElement.value
     });
   }
 }
