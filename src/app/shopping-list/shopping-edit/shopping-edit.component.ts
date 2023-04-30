@@ -23,12 +23,12 @@ export class ShoppingEditComponent {
     // console.log(this.ingredientAmount)
   }
 
-  submitIngredients(localIngredientName) {
+  submitIngredients(localIngredientName:HTMLInputElement, localIngredientAmount:HTMLInputElement,) {
     event.preventDefault()
-    console.log(localIngredientName.value)
+    console.log(localIngredientName.value, localIngredientAmount.value)
     this.outputIngValue.emit({
-      name: this.ingredientName,
-      amount: this.ingredientAmount
+      name: localIngredientName.value,
+      amount: localIngredientAmount.value
     });
   }
 }
