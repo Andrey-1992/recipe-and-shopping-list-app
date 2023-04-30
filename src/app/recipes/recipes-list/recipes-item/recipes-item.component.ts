@@ -8,14 +8,14 @@ import { Recipe } from '../../recipe.model';
 })
 export class RecipesItemComponent {
   @Input('childRecipe') recipe: Recipe;
-  @Output('selectedRecipeValue') recipeValues = new EventEmitter<Recipe>();
+  @Output('selectedRecipeValue') recipeSelected = new EventEmitter<Recipe>();
 
   ngOnInit() {
     // console.log(this.recipes)
   }
   
-  captureRecipeValues(recipe) {
-    this.recipeValues.emit(this.recipe);
+  onSelected() {
+    this.recipeSelected.emit(this.recipe);
   }
   
 }
