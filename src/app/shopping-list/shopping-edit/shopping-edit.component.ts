@@ -11,12 +11,16 @@ export class ShoppingEditComponent {
 
   incomningNameInput(event: Event) {
     this.ingredientName = (<HTMLInputElement>event.target).value
-    console.log(this.ingredientName)
+    // console.log(this.ingredientName)
   }
 
   incomningAmountInput(event: Event) {
     this.ingredientAmount = (<HTMLInputElement>event.target).value
-    console.log(this.ingredientAmount)
+    // console.log(this.ingredientAmount)
   }
 
+  submitIngredients() {
+    console.log(this.ingredientAmount);
+    console.log(this.ingredientName);
+  }
 }
