@@ -7,7 +7,7 @@
           type="text" 
           id="name" 
           class="form-control"
-          (input)="incomningNameInput($event)">
+          ([ngModel])="ingredientName">
       </div>
       <div class="col-sm-5 form-group">
         <label for="amount">Amount</label>
@@ -29,3 +29,14 @@
     </form>
   </div>
 </div>
+
+
+
+<!-- 
+This is the long version without using two-way-binding
+  <input 
+type="text" 
+id="name" 
+class="form-control"
+(input)="incomningNameInput($event)"
+> -->

@@ -22,12 +22,9 @@ export class ShoppingEditComponent {
   }
 
   submitIngredients() {
-    // console.log(this.ingredientAmount);
-    // console.log(this.ingredientName);
     this.outputIngValue.emit({
       name: this.ingredientName,
       amount: this.ingredientAmount
     });
-    // console.log(this.outputIngValue);
   }
 }
