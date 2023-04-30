@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class ShoppingEditComponent {
   ingredientName:string;
   ingredientAmount:string;
+  @Output('ingName') outputIngName = new EventEmitter()
 
   incomningNameInput(event: Event) {
     this.ingredientName = (<HTMLInputElement>event.target).value
@@ -22,5 +23,6 @@ export class ShoppingEditComponent {
   submitIngredients() {
     console.log(this.ingredientAmount);
     console.log(this.ingredientName);
+    // this.recipeValues.emit(recipeValue);
   }
 }
