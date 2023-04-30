@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Ingredient } from '../../shared/ingredient.modle';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -8,7 +9,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class ShoppingEditComponent {
   ingredientName:string;
   ingredientAmount:string;
-  @Output('ingName') outputIngName = new EventEmitter()
+  @Output('ingName') outputIngName = new EventEmitter<Ingredient>();
 
   incomningNameInput(event: Event) {
     this.ingredientName = (<HTMLInputElement>event.target).value
