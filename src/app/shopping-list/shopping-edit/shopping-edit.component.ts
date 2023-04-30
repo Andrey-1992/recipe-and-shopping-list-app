@@ -9,7 +9,7 @@ import { Ingredient } from '../../shared/ingredient.modle';
 export class ShoppingEditComponent {
   ingredientName:string;
   ingredientAmount:string;
-  @Output('ingName') outputIngName = new EventEmitter<Ingredient>();
+  @Output('ingName') outputIngValue = new EventEmitter<Ingredient>();
 
   incomningNameInput(event: Event) {
     this.ingredientName = (<HTMLInputElement>event.target).value
@@ -22,8 +22,12 @@ export class ShoppingEditComponent {
   }
 
   submitIngredients() {
-    console.log(this.ingredientAmount);
-    console.log(this.ingredientName);
-    // this.recipeValues.emit(recipeValue);
+    // console.log(this.ingredientAmount);
+    // console.log(this.ingredientName);
+    this.outputIngValue.emit({
+      name: this.ingredientName,
+      amount: this.ingredientAmount
+    });
+    console.log(this.outputIngValue);
   }
 }
