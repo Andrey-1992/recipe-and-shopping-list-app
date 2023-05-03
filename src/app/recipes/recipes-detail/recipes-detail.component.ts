@@ -7,5 +7,11 @@ import { Recipe } from './../recipe.model';
 })
 export class RecipesDetailComponent {
   @Input('childRecipe') recipe: Recipe;
+  open:boolean = true;
+
+  changeValue() {
+    this.open = !false;
+    console.log(this.open)
+  }
 
 }
