@@ -10,7 +10,11 @@ export class RecipesDetailComponent {
   open:boolean = true;
 
   changeValue() {
-    this.open = !false;
+    if (this.open) {
+      this.open = false;
+    } else {
+      this.open = true;
+    }
     console.log(this.open)
   }
 
