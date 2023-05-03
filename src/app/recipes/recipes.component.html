@@ -5,8 +5,14 @@
     </app-recipes-list>
   </div>
   <div class="col-md-7">
+    <!-- <app-recipes-detail 
+      [childRecipe]="recipe"
+    ></app-recipes-detail> -->
     <app-recipes-detail 
-    [childRecipe]="recipe">
-    </app-recipes-detail>
+      *ngIf="onSelectedRecipe; else infoText"
+    ></app-recipes-detail>
+    <ng-template #infoText>
+      <p>Please Select a Recipe!</p>
+    </ng-template>
   </div>
 </div>
