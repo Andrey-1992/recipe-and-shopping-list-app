@@ -10,6 +10,7 @@
     ></app-recipes-detail> -->
     <app-recipes-detail 
       *ngIf="onSelectedRecipe; else infoText"
+      [childRecipe]="recipe"
     ></app-recipes-detail>
     <ng-template #infoText>
       <p>Please Select a Recipe!</p>
