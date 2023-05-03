@@ -12,7 +12,7 @@ export class ShoppingEditComponent {
   @Output('ingredientObject') outputIngValue = new EventEmitter<Ingredient>();
   @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
   
-  submitIngredients(localIngredientName:HTMLInputElement) {
+  onAddItem(localIngredientName:HTMLInputElement) {
     event.preventDefault()
     // console.log(localIngredientName.value)
     this.outputIngValue.emit({
