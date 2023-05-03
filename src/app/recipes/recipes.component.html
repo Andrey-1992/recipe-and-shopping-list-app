@@ -9,7 +9,7 @@
       [childRecipe]="recipe"
     ></app-recipes-detail> -->
     <app-recipes-detail 
-      *ngIf="onSelectedRecipe; else infoText"
+      *ngIf="recipe; else infoText"
       [childRecipe]="recipe"
     ></app-recipes-detail>
     <ng-template #infoText>
