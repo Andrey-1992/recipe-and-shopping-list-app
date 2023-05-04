@@ -8,11 +8,15 @@ export class DropdownDirective {
   constructor(private elementRef: ElementRef, private render: Renderer2) {}
   
   ngOnInit() {
+    // this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'green');
+  }
+
+  @HostListener('mouseenter') mouseover(eventData: Event) {
     this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'green');
-  }
+  } 
 
-  @HostListener('mouseenter') mouseover() {
-
-  }
+  @HostListener('mouseleave') mouseleave(eventData: Event) {
+    this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'blue');
+  } 
 
 }
