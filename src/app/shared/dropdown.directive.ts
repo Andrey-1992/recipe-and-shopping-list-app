@@ -11,11 +11,16 @@ export class DropdownDirective {
     // this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'green');
   }
 
-  @HostListener('mouseenter') mouseover(eventData: Event) {
-    this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'green');
-  } 
+  // @HostListener('mouseenter') mouseover(eventData: Event) {
+  //   this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'green');
+  // } 
 
-  @HostListener('mouseleave') mouseleave(eventData: Event) {
+  // @HostListener('mouseleave') mouseleave(eventData: Event) {
+  //   this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'transparent');
+  // } 
+
+
+  @HostListener('onClick') onClick(eventData: Event) {
     this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'blue');
   } 
 
