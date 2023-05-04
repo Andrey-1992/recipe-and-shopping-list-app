@@ -10,8 +10,8 @@ export class DropdownDirective {
   ngOnInit() {
     this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'green');
   }
-  
-  @HostListener() mouseover() {
+
+  @HostListener('mouseenter') mouseover() {
 
   }
 
