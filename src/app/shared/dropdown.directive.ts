@@ -9,7 +9,7 @@ import { Directive,
 })
 
 export class DropdownDirective {
-  @HostBinding('style.backgroundColor') backgroundColor: string;
+  @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
   
   constructor(private elementRef: ElementRef, private render: Renderer2) {}
   
@@ -18,12 +18,12 @@ export class DropdownDirective {
   }
 
   @HostListener('mouseenter') mouseover(eventData: Event) {
-    this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'green');
+    // this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'green');
     this.backgroundColor = 'green';
   } 
 
   @HostListener('mouseleave') mouseleave(eventData: Event) {
-    this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'transparent');
+    // this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'transparent');
     this.backgroundColor = 'transparent';
   } 
 
