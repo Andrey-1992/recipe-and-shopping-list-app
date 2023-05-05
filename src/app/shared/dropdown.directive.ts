@@ -22,12 +22,12 @@ export class DropdownDirective {
 
   @HostListener('mouseenter') mouseover(eventData: Event) {
     // this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'green');
-    this.backgroundColor = 'green';
+    this.backgroundColor = this.highlightColor;
   } 
 
   @HostListener('mouseleave') mouseleave(eventData: Event) {
     // this.render.setStyl`e(this.elementRef.nativeElement, 'backgroundColor', 'transparent');
-    this.backgroundColor = 'transparent';
+    this.backgroundColor = this.defaultColor;
   } 
 
 
