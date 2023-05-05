@@ -2,6 +2,7 @@ import { Directive,
   ElementRef, 
   HostBinding, 
   HostListener, 
+  Input, 
   OnInit, 
   Renderer2 } from '@angular/core';
 @Directive({
@@ -9,6 +10,8 @@ import { Directive,
 })
 
 export class DropdownDirective {
+  @Input() defaultColor: string = 'transparent';
+  @Input() highlightColor: string = 'blue';
   @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
   
   constructor(private elementRef: ElementRef, private render: Renderer2) {}
@@ -23,7 +26,7 @@ export class DropdownDirective {
   } 
 
   @HostListener('mouseleave') mouseleave(eventData: Event) {
-    // this.render.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'transparent');
+    // this.render.setStyl`e(this.elementRef.nativeElement, 'backgroundColor', 'transparent');
     this.backgroundColor = 'transparent';
   } 
 
