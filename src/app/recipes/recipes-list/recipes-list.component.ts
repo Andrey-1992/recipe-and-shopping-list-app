@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,13 +7,17 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipes-list.component.css']
 })
 export class RecipesListComponent {
+  @Output('selectedRecipeValue') recipeValues = new EventEmitter<Recipe>();
 
+  recipeValue:Recipe;
   recipes: Recipe[] = [
-    new Recipe('A test recipe','Simple Test','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg'),
-    new Recipe('A test recipe','Simple Test','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg')
+    new Recipe('A test recipe 1','Simple Test 1','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg'),
+    new Recipe('A test recipe 2','Simple Test 2','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg')
   ];
-  test0 = this.recipes[0].name
-  test1 = this.recipes[0].name
-  test2 = this.recipes[0].imgPath
 
+  onSelectedRecipe(recipeValue: Recipe) {
+    // this.recipeValue = recipeValue;
+    // console.log(this.recipeValue)
+    this.recipeValues.emit(recipeValue);
+  }
 }
