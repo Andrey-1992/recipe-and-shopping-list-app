@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 
@@ -7,7 +7,7 @@ import { RecipeService } from '../recipe.service';
   templateUrl: './recipes-list.component.html',
   styleUrls: ['./recipes-list.component.css']
 })
-export class RecipesListComponent {
+export class RecipesListComponent implements OnInit{
   @Output('selectedRecipeValue') recipeValues = new EventEmitter<Recipe>();
   constructor(private recipeService: RecipeService) {}
 
@@ -17,7 +17,9 @@ export class RecipesListComponent {
     new Recipe('A test recipe 2','Simple Test 2','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg')
   ];
 
-  
+  ngOnInit() {
+
+  }
 
   onSelectedRecipe(recipeValue: Recipe) {
     // this.recipeValue = recipeValue;
