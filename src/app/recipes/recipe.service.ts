@@ -8,6 +8,6 @@ export class RecipeService {
   ];
 
   getRecipes() {
-    return this.recipes;
+    return this.recipes.slice();
   }
 };
