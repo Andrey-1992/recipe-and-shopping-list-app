@@ -12,13 +12,10 @@ export class RecipesListComponent implements OnInit{
   constructor(private recipeService: RecipeService) {}
 
   recipeValue:Recipe;
-  recipes: Recipe[] = [
-    new Recipe('A test recipe 1','Simple Test 1','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg'),
-    new Recipe('A test recipe 2','Simple Test 2','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg')
-  ];
+  recipes: Recipe[]
 
   ngOnInit() {
-
+    this.recipes = this.recipeService.recipes;
   }
 
   onSelectedRecipe(recipeValue: Recipe) {
