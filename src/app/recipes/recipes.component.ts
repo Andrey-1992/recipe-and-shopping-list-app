@@ -11,8 +11,6 @@ import { RecipeService } from './recipe.service';
 export class RecipesComponent {
   recipe:Recipe;
 
-  constructor(private recipeService: RecipeService) {}
-
   onSelectedRecipe(recipeValue) {
     this.recipe = recipeValue;
   }
