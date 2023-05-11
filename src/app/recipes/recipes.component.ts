@@ -9,10 +9,12 @@ import { RecipeService } from './recipe.service';
   providers: [RecipeService]
 })
 export class RecipesComponent {
-  recipe:Recipe;
+  selectedRecipe:Recipe;
 
-  onSelectedRecipe(recipeValue) {
-    this.recipe = recipeValue;
-  }
+  constructor(private recipeService: RecipeService) {}
+
+  // onSelectedRecipe(recipeValue) {
+  //   this.selectedRecipe = recipeValue;
+  // }
 
 }
