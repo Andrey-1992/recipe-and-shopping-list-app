@@ -15,5 +15,6 @@ export class RecipeService {
 
   getSelectedRecipe(recipe:Recipe) {
     this.selectedRecipe = recipe;
+    console.log(this.selectedRecipe)
   }
 };
