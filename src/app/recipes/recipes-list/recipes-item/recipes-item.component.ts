@@ -9,7 +9,7 @@ import { RecipeService } from '../../recipe.service';
 })
 export class RecipesItemComponent {
   @Input('childRecipe') recipe: Recipe;
-  @Output('selectedRecipeValue') recipeSelected = new EventEmitter<Recipe>();
+  // @Output('selectedRecipeValue') recipeSelected = new EventEmitter<Recipe>();
 
   constructor(private recipeService: RecipeService) {}
 
@@ -19,8 +19,8 @@ export class RecipesItemComponent {
   
   onSelected() {
     // this.recipeSelected.emit(this.recipe);
-    this.recipeSelected.emit();
-    this.recipeService.getSelectedRecipe(this.recipe);
+    // this.recipeSelected.emit();
+    this.recipeService.recipeSelected.emit(this.recipe);
   }
   
 }
