@@ -1,3 +1,4 @@
+import { EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
 
 
@@ -7,14 +8,14 @@ export class RecipeService {
     new Recipe('A test recipe 1','Simple Test 1','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg'),
     new Recipe('A test recipe 2','Simple Test 2','https://www.acouplecooks.com/wp-content/uploads/2019/03/Mushroom-Pasta-007.jpg')
   ];
-  selectedRecipe: Recipe;
+  recipeSelected = new EventEmitter<Recipe>();
 
   getRecipes() {
     return this.recipes.slice();
   }
 
-  getSelectedRecipe(recipe:Recipe) {
-    this.selectedRecipe = recipe;
-    console.log(this.selectedRecipe)
-  }
+  // getSelectedRecipe(recipe:Recipe) {
+  //   this.selectedRecipe = recipe;
+  //   console.log(this.selectedRecipe)
+  // }
 };
