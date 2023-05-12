@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.modle';
 import { ShoppingListService } from './shopping-list.service';
 
@@ -8,9 +8,14 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.css'],
   providers: [ShoppingListService]
 })
-export class ShoppingListComponent {
+export class ShoppingListComponent implements OnInit{
+  ingredients:Ingredient[]
 
   constructor(private shoppingListService: ShoppingListService) {}
+  
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
   
 }
 
