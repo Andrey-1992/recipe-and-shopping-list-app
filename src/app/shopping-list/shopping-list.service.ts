@@ -6,10 +6,9 @@ export class ShoppingListService {
     new Ingredient("Apples 🍎 ", "5"),
     new Ingredient("Tomatoes 🍅 ", "3")
   ];
-  outputIngValue = new EventEmitter<Ingredient>();
+  // outputIngValue = new EventEmitter<Ingredient>();
 
   addIngredient(ingredientObject:Ingredient) {
-    // console.log(ingredientObject);
     this.ingredients.push(ingredientObject);
   }
 };

@@ -10,7 +10,7 @@ import { Ingredient } from '../../shared/ingredient.modle';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent{
-  @Output('ingredientObject') outputIngValue = new EventEmitter<Ingredient>();
+  // @Output('ingredientObject') outputIngValue = new EventEmitter<Ingredient>();
   @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
 
   constructor(private shoppingListService: ShoppingListService) {}
@@ -21,10 +21,6 @@ export class ShoppingEditComponent{
       name: localIngredientName.value,
       amount: this.localIngredientAmount.nativeElement.value
     });
-    // this.shoppingListService.outputIngValue.emit({
-    //   name: localIngredientName.value,
-    //   amount: this.localIngredientAmount.nativeElement.value
-    // });
     // console.log(localIngredientName.value)
     // this.outputIngValue.emit({
     //   name: localIngredientName.value,
