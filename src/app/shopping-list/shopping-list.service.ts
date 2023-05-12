@@ -6,7 +6,10 @@ export class ShoppingListService {
     new Ingredient("Apples 🍎 ", "5"),
     new Ingredient("Tomatoes 🍅 ", "3")
   ];
-  // outputIngValue = new EventEmitter<Ingredient>();
+  
+  getIngredients() {
+    return this.ingredients.slice();
+  }
 
   addIngredient(ingredientObject:Ingredient) {
     this.ingredients.push(ingredientObject);
