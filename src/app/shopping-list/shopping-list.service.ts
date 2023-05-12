@@ -8,9 +8,9 @@ export class ShoppingListService {
   ];
   outputIngValue = new EventEmitter<Ingredient>();
 
-  onPassedValue(ingredientObject) {
+  addIngredient(ingredientObject:Ingredient) {
     // console.log(ingredientObject);
-    this.ingredients.push(new Ingredient(ingredientObject.name, ingredientObject.amount));
+    this.ingredients.push(ingredientObject);
   }
 };
 

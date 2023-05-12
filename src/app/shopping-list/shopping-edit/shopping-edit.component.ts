@@ -17,10 +17,14 @@ export class ShoppingEditComponent{
   
   onAddItem(localIngredientName:HTMLInputElement) {
     event.preventDefault()
-    this.shoppingListService.outputIngValue.emit({
+    this.shoppingListService.addIngredient({
       name: localIngredientName.value,
       amount: this.localIngredientAmount.nativeElement.value
     });
+    // this.shoppingListService.outputIngValue.emit({
+    //   name: localIngredientName.value,
+    //   amount: this.localIngredientAmount.nativeElement.value
+    // });
     // console.log(localIngredientName.value)
     // this.outputIngValue.emit({
     //   name: localIngredientName.value,
