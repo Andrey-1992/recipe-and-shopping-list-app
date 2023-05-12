@@ -9,14 +9,17 @@ import { ShoppingListService } from './shopping-list.service';
   providers: [ShoppingListService]
 })
 export class ShoppingListComponent {
-  // ingredients:Ingredient[] = [
-  //   new Ingredient("Apples 🍎 ", "5"),
-  //   new Ingredient("Tomatoes 🍅 ", "3")
-  // ];
 
-  // onPassedValue(ingredientObject) {
-  //   // console.log(ingredientObject);
-  //   this.ingredients.push(new Ingredient(ingredientObject.name, ingredientObject.amount));
-  // }
-
+  constructor(private shoppingListService: ShoppingListService) {}
+  
 }
+
+// ingredients:Ingredient[] = [
+//   new Ingredient("Apples 🍎 ", "5"),
+//   new Ingredient("Tomatoes 🍅 ", "3")
+// ];
+
+// onPassedValue(ingredientObject) {
+//   // console.log(ingredientObject);
+//   this.ingredients.push(new Ingredient(ingredientObject.name, ingredientObject.amount));
+// }
