@@ -1,5 +1,6 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ShoppingListService } from '../shopping-list.service';
 
 import { Ingredient } from '../../shared/ingredient.modle';
 
@@ -8,17 +9,23 @@ import { Ingredient } from '../../shared/ingredient.modle';
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css']
 })
-export class ShoppingEditComponent {
+export class ShoppingEditComponent{
   @Output('ingredientObject') outputIngValue = new EventEmitter<Ingredient>();
   @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
+
+  constructor(private shoppingListService: ShoppingListService) {}
   
   onAddItem(localIngredientName:HTMLInputElement) {
     event.preventDefault()
-    // console.log(localIngredientName.value)
-    this.outputIngValue.emit({
+    this.shoppingListService.outputIngValue.emit({
       name: localIngredientName.value,
       amount: this.localIngredientAmount.nativeElement.value
     });
+    // console.log(localIngredientName.value)
+    // this.outputIngValue.emit({
+    //   name: localIngredientName.value,
+    //   amount: this.localIngredientAmount.nativeElement.value
+    // });
   }
 }
 
