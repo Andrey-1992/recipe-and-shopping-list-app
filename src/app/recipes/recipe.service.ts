@@ -31,8 +31,7 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
-  // getSelectedRecipe(recipe:Recipe) {
-  //   this.selectedRecipe = recipe;
-  //   console.log(this.selectedRecipe)
-  // }
+  addIngredientsToShoppinglist(ingredients: Ingredient[]){
+    
+  } 
 };
