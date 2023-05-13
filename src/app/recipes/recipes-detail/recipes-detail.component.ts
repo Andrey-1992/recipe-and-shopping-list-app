@@ -22,7 +22,7 @@ export class RecipesDetailComponent {
     console.log(this.open)
   }
 
-  passIngredients() {
+  onAddShoppingList() {
     console.log(this.recipe.ingredients)
   }
 
