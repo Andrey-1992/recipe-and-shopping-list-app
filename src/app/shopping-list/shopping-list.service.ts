@@ -19,7 +19,10 @@ export class ShoppingListService {
   }
 
   addIngredients(ingredients: Ingredient[]) {
-    console.log(ingredients)
+    // console.log(ingredients)
+    for (let ingredient of ingredients) {
+      this.addIngredient(ingredient);
+    }
   }
 };
 
