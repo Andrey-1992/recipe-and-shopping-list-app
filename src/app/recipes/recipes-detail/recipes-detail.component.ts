@@ -7,8 +7,11 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipes-detail.component.css']
 })
 export class RecipesDetailComponent {
+
   @Input('childRecipe') recipe: Recipe;
   open:boolean = true;
+
+  constructor(private recipeService: RecipeService) {}
 
   changeValue() {
     if (this.open) {
