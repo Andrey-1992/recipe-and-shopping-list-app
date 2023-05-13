@@ -36,6 +36,7 @@ export class RecipeService {
   }
 
   addIngredientsToShoppinglist(ingredients: Ingredient[]){
-    console.log(ingredients)
+    // console.log(ingredients)
+    this.slService.addIngredients(ingredients)
   } 
 };
