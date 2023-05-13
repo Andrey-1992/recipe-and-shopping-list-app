@@ -22,4 +22,8 @@ export class RecipesDetailComponent {
     console.log(this.open)
   }
 
+  passIngredients() {
+    console.log(this.recipe.ingredients)
+  }
+
 }
