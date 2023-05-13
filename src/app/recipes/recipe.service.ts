@@ -32,6 +32,6 @@ export class RecipeService {
   }
 
   addIngredientsToShoppinglist(ingredients: Ingredient[]){
-    
+    console.log(ingredients)
   } 
 };

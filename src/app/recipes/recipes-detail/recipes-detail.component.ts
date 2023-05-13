@@ -23,7 +23,8 @@ export class RecipesDetailComponent {
   }
 
   onAddShoppingList() {
-    console.log(this.recipe.ingredients)
+    // console.log(this.recipe.ingredients)
+    this.recipeService.addIngredientsToShoppinglist(this.recipe.ingredients)
   }
 
 }
