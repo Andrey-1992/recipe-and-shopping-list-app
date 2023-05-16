@@ -13,7 +13,11 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
+import { Routes } from '@angular/router';
 
+const appRoutes: Routes = [
+
+];
 @NgModule({
   declarations: [
     AppComponent,

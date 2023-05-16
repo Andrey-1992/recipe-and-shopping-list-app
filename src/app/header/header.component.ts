@@ -10,7 +10,7 @@ export class HeaderComponent {
   @Output('internalFeatureSelected') featureSelected = new EventEmitter<string>();
 
   onSelect(feature) {
-    console.log(feature.srcElement.innerText)
+    // console.log(feature.srcElement.innerText)
     const convertedValue = feature.srcElement.innerText
     this.featureSelected.emit(convertedValue)
   }
