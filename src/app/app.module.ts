@@ -16,7 +16,9 @@ import { RecipeService } from './recipes/recipe.service';
 import { Routes } from '@angular/router';
 
 const appRoutes: Routes = [
-  {path: 'shopping-list', component: ShoppingListComponent}
+  {path: '', component: AppComponent},
+  {path: 'shopping-list', component: ShoppingListComponent},
+  {path: 'recipes', component: RecipesComponent}
 ];
 @NgModule({
   declarations: [
