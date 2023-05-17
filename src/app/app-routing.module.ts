@@ -11,4 +11,7 @@ const appRoutes: Routes = [
 ];
 @NgModule({
 
-});
+})
+export class AppRoutingModule {
+  
+}
