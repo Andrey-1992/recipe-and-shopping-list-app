@@ -10,8 +10,8 @@ const appRoutes: Routes = [
   {path: 'recipes', component: RecipesComponent}
 ];
 @NgModule({
-
+  imports: [RouterModule.forRoot(appRoutes)],
 })
 export class AppRoutingModule {
-  
+
 }
