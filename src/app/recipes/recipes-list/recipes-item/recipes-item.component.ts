@@ -25,7 +25,7 @@ export class RecipesItemComponent {
     // this.recipeSelected.emit(this.recipe);
     // this.recipeSelected.emit();
     // this.recipeService.recipeSelected.emit(this.recipe);
-    this.router.navigate(['shopping-list'])
+    this.router.navigate(['shopping-list'], {relativeTo: this.activatedRoute})
   }
   
 }
