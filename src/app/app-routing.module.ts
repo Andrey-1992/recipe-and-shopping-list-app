@@ -7,7 +7,8 @@ import { RecipesComponent } from './recipes/recipes.component';
 const appRoutes: Routes = [
   {path: '', redirectTo: '/recipes', pathMatch:'full'},
   {path: 'shopping-list', component: ShoppingListComponent},
-  {path: 'recipes', component: RecipesComponent}
+  {path: 'recipes', component: RecipesComponent},
+  {path: 'recipes/:id', component: RecipesComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
