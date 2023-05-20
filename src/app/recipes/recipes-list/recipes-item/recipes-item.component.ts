@@ -21,11 +21,12 @@ export class RecipesItemComponent {
     // console.log(this.recipes)
   }
   
-  onSelected() {
+  onSelected(id: string) {
     // this.recipeSelected.emit(this.recipe);
     // this.recipeSelected.emit();
     // this.recipeService.recipeSelected.emit(this.recipe);
-    this.router.navigate(['shopping-list'], {relativeTo: this.activatedRoute})
+    this.router.navigate(['/recipes', id])
+    // this.router.navigate(id, {relativeTo: this.activatedRoute})
   }
   
 }
