@@ -19,14 +19,14 @@ export class RecipesItemComponent {
     ) {}
 
   ngOnInit() {
-    console.log(this.recipe)
+    // console.log(this.recipeNum)
   }
   
-  onSelected(id: string) {
+  onSelected() {
     // this.recipeSelected.emit(this.recipe);
     // this.recipeSelected.emit();
     // this.recipeService.recipeSelected.emit(this.recipe);
-    this.router.navigate(['/recipes', id])
+    this.router.navigate(['/recipes', this.recipeNum])
     // this.router.navigate(id, {relativeTo: this.activatedRoute})
   }
   
