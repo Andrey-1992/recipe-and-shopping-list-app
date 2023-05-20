@@ -9,8 +9,9 @@ import { RecipeService } from '../../recipe.service';
   styleUrls: ['./recipes-item.component.css']
 })
 export class RecipesItemComponent {
-  @Input('childRecipe') recipe: Recipe;
   // @Output('selectedRecipeValue') recipeSelected = new EventEmitter<Recipe>();
+  @Input('childRecipe') recipe: Recipe;
+  @Input('childRecipeNum') recipeNum: number;
 
   constructor(private recipeService: RecipeService,
       private router: Router,
@@ -18,7 +19,7 @@ export class RecipesItemComponent {
     ) {}
 
   ngOnInit() {
-    // console.log(this.recipes)
+    console.log(this.recipe)
   }
   
   onSelected(id: string) {
