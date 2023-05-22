@@ -30,5 +30,4 @@ export class RecipesItemComponent {
     // console.log(this.router)
     this.router.navigate([this.recipeNum], {relativeTo: this.activatedRoute})
   }
-  
 }
