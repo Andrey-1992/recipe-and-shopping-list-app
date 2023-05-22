@@ -10,7 +10,9 @@
       *ngFor="let recipe of recipes"  
       [childRecipe]="recipe" 
       [childRecipeNum]="recipes.indexOf(recipe)" 
-      (selectedRecipeValue)="onSelectedRecipe(recipe)">
+      >
     </app-recipes-item>
   </div>
 </div>
+
+<!-- (selectedRecipeValue)="onSelectedRecipe(recipe)" -->

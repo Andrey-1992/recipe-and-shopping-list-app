@@ -25,7 +25,7 @@ export class RecipesItemComponent {
   onSelected() {
     // this.recipeSelected.emit(this.recipe);
     // this.recipeSelected.emit();
-    // this.recipeService.recipeSelected.emit(this.recipe);
+    this.recipeService.recipeSelected.emit(this.recipe);
     // this.router.navigate(['/recipes', this.recipeNum], {queryParams: {allowEdit: this.recipeNum}, fragment: 'loading'})
     this.router.navigate([this.recipeNum], {relativeTo: this.activatedRoute})
   }
