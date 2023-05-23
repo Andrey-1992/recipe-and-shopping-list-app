@@ -1,7 +1,7 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { Recipe } from './../recipe.model';
 import { RecipeService } from '../recipe.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-recipes-detail',
   templateUrl: './recipes-detail.component.html',
@@ -12,6 +12,7 @@ export class RecipesDetailComponent implements OnInit{
 
   open:boolean = true;
 
+  id: number;
   selectedRecipe:Recipe;
 
   constructor(
@@ -20,13 +21,13 @@ export class RecipesDetailComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.recipeService.recipeSelected
-    .subscribe(
-      (recipe: Recipe) => {
-        this.selectedRecipe = recipe
-        // console.log(this.selectedRecipe)
-      }
-    )
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          console.log(this.id)
+        }
+      )
   }
 
   changeValue() {
