@@ -22,12 +22,8 @@ export class RecipesItemComponent {
     // console.log(this.recipeNum)
   }
   
-  onSelected() {
-    // this.recipeSelected.emit(this.recipe);
-    // this.recipeSelected.emit();
-    this.recipeService.recipeSelected.emit(this.recipe);
-    // this.router.navigate(['/recipes', this.recipeNum], {queryParams: {allowEdit: this.recipeNum}, fragment: 'loading'})
-    // console.log(this.router)
-    this.router.navigate([this.recipeNum], {relativeTo: this.activatedRoute})
-  }
+  // onSelected() {
+  //   this.recipeService.recipeSelected.emit(this.recipe);
+  //   this.router.navigate([this.recipeNum], {relativeTo: this.activatedRoute})
+  // }
 }

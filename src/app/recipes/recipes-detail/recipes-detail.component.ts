@@ -7,8 +7,8 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipes-detail.component.css']
 })
 export class RecipesDetailComponent implements OnInit{
+  // @Input('childRecipe') recipe: Recipe;
 
-  @Input('childRecipe') recipe: Recipe;
   open:boolean = true;
 
   selectedRecipe:Recipe;
