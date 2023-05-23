@@ -9,17 +9,22 @@ import { Recipe } from '../../recipe.model';
   styleUrls: ['./recipes-item.component.css']
 })
 export class RecipesItemComponent {
-  // @Output('selectedRecipeValue') recipeSelected = new EventEmitter<Recipe>();
   @Input('childRecipe') recipe: Recipe;
-  @Input('childRecipeNum') recipeNum: number;
-
-  // constructor(private recipeService: RecipeService,
-  //     private router: Router,
-  //     private activatedRoute: ActivatedRoute
-  //   ) {}
+  @Input('childRecipeIndex') index: number;
   
-  // onSelected() {
-  //   this.recipeService.recipeSelected.emit(this.recipe);
-  //   this.router.navigate([this.recipeNum], {relativeTo: this.activatedRoute})
-  // }
 }
+
+
+
+// Previous Solution for Routing Code Solution ---->
+
+// @Output('selectedRecipeValue') recipeSelected = new EventEmitter<Recipe>();
+// constructor(private recipeService: RecipeService,
+//     private router: Router,
+//     private activatedRoute: ActivatedRoute
+//   ) {}
+
+// onSelected() {
+//   this.recipeService.recipeSelected.emit(this.recipe);
+//   this.router.navigate([this.recipeNum], {relativeTo: this.activatedRoute})
+// }
