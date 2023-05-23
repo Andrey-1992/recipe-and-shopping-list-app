@@ -13,7 +13,7 @@ export class RecipesDetailComponent implements OnInit{
   open:boolean = true;
 
   id: number;
-  selectedRecipe:Recipe;
+  selectedRecipe: any;
 
   constructor(
     private recipeService: RecipeService,
@@ -25,7 +25,7 @@ export class RecipesDetailComponent implements OnInit{
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
-          console.log(this.id)
+          this.selectedRecipe = this.recipeService.getRecipe(this.id);
         }
       )
   }
