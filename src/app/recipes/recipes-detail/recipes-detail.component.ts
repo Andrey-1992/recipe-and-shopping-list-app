@@ -36,11 +36,9 @@ export class RecipesDetailComponent implements OnInit{
     } else {
       this.open = true;
     }
-    console.log(this.open)
   }
 
   onAddShoppingList() {
-    // console.log(this.recipe.ingredients)
     this.recipeService.addIngredientsToShoppinglist(this.selectedRecipe.ingredients)
   }
 
