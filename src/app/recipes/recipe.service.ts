@@ -27,7 +27,7 @@ export class RecipeService {
         new Ingredient('Pinapple', '3'),
       ])
   ];
-  recipeSelected = new EventEmitter<Recipe>();
+  // recipeSelected = new EventEmitter<Recipe>();
 
   constructor(private slService: ShoppingListService) {}
 
@@ -37,7 +37,7 @@ export class RecipeService {
 
   getRecipe(index: number) {
     return this.recipes.slice()[index];
-    console.log(this.recipes.slice()[index])
+    // console.log(this.recipes.slice()[index])
   }
 
   addIngredientsToShoppinglist(ingredients: Ingredient[]){
