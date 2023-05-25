@@ -18,10 +18,6 @@ export class RecipeEditComponent implements OnInit {
       .subscribe((params: Params) => {
         this.id = +params['id'];
         this.editMode = params['id'] != null;
-        // console.log(this.editMode)
-        // if (this.editMode) {
-        //   this.componentState = 'New Status'
-        // }
         !this.editMode ? this.componentState = 'New Status' : this.componentState = 'Edit Status'
       }
     )
