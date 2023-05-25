@@ -22,5 +22,9 @@ export class RecipeEditComponent implements OnInit {
       }
     )
   }
+  
+  onNewRecipe() {
+
+  }
 
 }
