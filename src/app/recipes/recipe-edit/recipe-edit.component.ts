@@ -11,7 +11,7 @@ export class RecipeEditComponent implements OnInit {
   editMode = false;
   componentState: string;
 
-  constructor(private route: ActivatedRoute, private router: Router,) {};
+  constructor(private route: ActivatedRoute) {};
 
   ngOnInit() {
     this.route.params
@@ -21,10 +21,6 @@ export class RecipeEditComponent implements OnInit {
         !this.editMode ? this.componentState = 'New Status' : this.componentState = 'Edit Status'
       }
     )
-  }
-
-  onNewRecipe() {
-    this.router.navigate(['edit'], {relativeTo: this.route})
   }
 
 }
