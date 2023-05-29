@@ -27,12 +27,17 @@ export class RecipeService {
         new Ingredient('Pinapple', '3'),
       ])
   ];
-  recipeSelected = new EventEmitter<Recipe>();
+  // recipeSelected = new EventEmitter<Recipe>();
 
   constructor(private slService: ShoppingListService) {}
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes.slice()[index];
+    // console.log(this.recipes.slice()[index])
   }
 
   addIngredientsToShoppinglist(ingredients: Ingredient[]){

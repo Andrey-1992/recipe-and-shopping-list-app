@@ -7,12 +7,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   collapsed = true;
-  @Output('internalFeatureSelected') featureSelected = new EventEmitter<string>();
-
-  onSelect(feature) {
-    console.log(feature.srcElement.innerText)
-    const convertedValue = feature.srcElement.innerText
-    this.featureSelected.emit(convertedValue)
-  }
+  // @Output('internalFeatureSelected') featureSelected = new EventEmitter<string>();
+  // onSelect(feature) {
+  //   // console.log(feature.srcElement.innerText)
+  //   const convertedValue = feature.srcElement.innerText
+  //   this.featureSelected.emit(convertedValue)
+  // }
   
 }

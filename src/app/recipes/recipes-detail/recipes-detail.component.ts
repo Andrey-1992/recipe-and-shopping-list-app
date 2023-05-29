@@ -1,17 +1,39 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { Recipe } from './../recipe.model';
 import { RecipeService } from '../recipe.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 @Component({
   selector: 'app-recipes-detail',
   templateUrl: './recipes-detail.component.html',
   styleUrls: ['./recipes-detail.component.css']
 })
-export class RecipesDetailComponent {
+export class RecipesDetailComponent implements OnInit{
+  // @Input('childRecipe') recipe: Recipe;
 
-  @Input('childRecipe') recipe: Recipe;
   open:boolean = true;
 
-  constructor(private recipeService: RecipeService) {}
+  id: number;
+  selectedRecipe: any;
+  index: number;
+
+  constructor(
+    private recipeService: RecipeService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          // console.log(params)
+          // console.log(params['id'])
+          this.selectedRecipe = this.recipeService.getRecipe(this.id);
+          this.index = +params['id'];
+        }
+      )
+  }
 
   changeValue() {
     if (this.open) {
@@ -19,12 +41,14 @@ export class RecipesDetailComponent {
     } else {
       this.open = true;
     }
-    console.log(this.open)
   }
 
   onAddShoppingList() {
-    // console.log(this.recipe.ingredients)
-    this.recipeService.addIngredientsToShoppinglist(this.recipe.ingredients)
+    this.recipeService.addIngredientsToShoppinglist(this.selectedRecipe.ingredients)
+  }
+
+  onEditRecipe() {
+    this.router.navigate(['edit'], {relativeTo: this.route})
   }
 
 }

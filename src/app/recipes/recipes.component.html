@@ -2,13 +2,16 @@
   <div class="col-md-5">
     <app-recipes-list></app-recipes-list>
   </div>
-  <div class="col-md-7">
-    <app-recipes-detail 
-      *ngIf="selectedRecipe; else infoText"
-      [childRecipe]="selectedRecipe"
-    ></app-recipes-detail>
-    <ng-template #infoText>
-      <p>Please Select a Recipe!</p>
-    </ng-template>
+  <div class="col-md-7" >
+    <router-outlet></router-outlet>
   </div>
 </div>
+
+<!-- <app-recipes-detail 
+  <ng-template #infoText>
+    <p>Please Select a Recipe!</p>
+  </ng-template>
+  *ngIf="selectedRecipe; else infoText"
+  [childRecipe]="selectedRecipe"
+></app-recipes-detail>  -->
+<!-- <a routerLink="shopping-list">Test Route</a> -->

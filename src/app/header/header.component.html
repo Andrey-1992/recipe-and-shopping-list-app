@@ -12,15 +12,17 @@
     <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
     <!-- <div class="collapse navbar-collapse"> -->
       <ul class="nav navbar-nav">
-        <li><a href="#" (click)="onSelect($event)">Recipes</a></li>
-        <li><a href="#" (click)="onSelect($event)">Shopping List</a></li>
+        <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
+        <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
+        <!-- <li routerLinkActive="active"><a routerLink="/recipes" (click)="onSelect($event)">Recipes</a></li>
+        <li routerLinkActive="active"><a routerLink="/shopping-list" (click)="onSelect($event)">Shopping List</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
-          <a href="#" class="dropdown-toggle" role="button">Manage<span class="caret"></span></a>
+          <a style="cursor: pointer"class="dropdown-toggle" role="button">Manage<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Save Data</a></li>
-            <li><a href="#">Fetch Data</a></li>
+            <li><a style="cursor: pointer"class="dropdown-toggle">Save Data</a></li>
+            <li><a style="cursor: pointer"class="dropdown-toggle">Fetch Data</a></li>
           </ul>
         </li>
       </ul>
