@@ -1,8 +1,10 @@
-import { EventEmitter } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.modle';
+// import { EventEmitter } from '@angular/core';
+import {  Subject} from 'rxjs';
+
 
 export class ShoppingListService {
-  ingredientsChanged = new EventEmitter<Ingredient[]>();
+  ingredientsChanged = new Subject<Ingredient[]>();
 
   ingredients:Ingredient[] = [
     new Ingredient("Apples 🍎 ", "5"),
