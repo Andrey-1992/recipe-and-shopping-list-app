@@ -9,6 +9,6 @@ export class Ingredient {
   // }
 
   //TypeScript offers an oppotunity to create by defaul objects:
-  constructor(public name: string, public amount: string) {}
+  constructor(public name: any, public amount: any) {}
 
 }

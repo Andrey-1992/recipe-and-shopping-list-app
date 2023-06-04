@@ -30,10 +30,10 @@ export class ShoppingEditComponent implements OnInit{
   onAddItem() {
     event.preventDefault()
     console.log(this.ingredientsForm)
-    // this.shoppingListService.addIngredient({
-    //   name: localIngredientName.value,
-    //   amount: this.localIngredientAmount.nativeElement.value
-    // });
+    this.shoppingListService.addIngredient({
+      name: this.ingredientsForm.controls.ingredientName,
+      amount: this.ingredientsForm.controls.ingredientAmount,
+    });
   }
 
 }
