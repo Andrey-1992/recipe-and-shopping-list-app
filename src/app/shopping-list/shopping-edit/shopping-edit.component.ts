@@ -20,13 +20,6 @@ export class ShoppingEditComponent implements OnInit{
     console.log(this.ingredientsForm)
   }
   
-  // onAddItem(localIngredientName:HTMLInputElement) {
-  //   event.preventDefault()
-  //   this.shoppingListService.addIngredient({
-  //     name: localIngredientName.value,
-  //     amount: this.localIngredientAmount.nativeElement.value
-  //   });
-  // }
   onAddItem() {
     event.preventDefault()
     // console.log(this.ingredientsForm.controls.ingredientName.value)
@@ -60,3 +53,13 @@ export class ShoppingEditComponent implements OnInit{
 // this.outputIngValue.emit({
 //   amount: this.localIngredientAmount.nativeElement.value
 // });
+
+
+// Previous solution to create new ingredietns without usgin the FormControl Approach:
+ // onAddItem(localIngredientName:HTMLInputElement) {
+  //   event.preventDefault()
+  //   this.shoppingListService.addIngredient({
+  //     name: localIngredientName.value,
+  //     amount: this.localIngredientAmount.nativeElement.value
+  //   });
+  // }
