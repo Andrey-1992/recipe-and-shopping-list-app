@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ShoppingListService } from '../shopping-list.service';
 
@@ -10,15 +10,12 @@ import { NgFor } from '@angular/common';
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css']
 })
-export class ShoppingEditComponent implements OnInit{
+export class ShoppingEditComponent {
   // @Output('ingredientObject') outputIngValue = new EventEmitter<Ingredient>();
   @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
   @ViewChild('formObj') ingredientsForm: NgForm;
 
   constructor(private shoppingListService: ShoppingListService) {}
-  ngOnInit(): void {
-    console.log(this.ingredientsForm)
-  }
   
   onAddItem() {
     event.preventDefault()
