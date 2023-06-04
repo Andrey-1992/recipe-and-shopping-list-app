@@ -10,20 +10,23 @@ import { NgFor } from '@angular/common';
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css']
 })
-export class ShoppingEditComponent{
+export class ShoppingEditComponent implements OnInit{
   // @Output('ingredientObject') outputIngValue = new EventEmitter<Ingredient>();
   @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
   @ViewChild('formObj') ingredientsForm: NgForm;
 
   constructor(private shoppingListService: ShoppingListService) {}
-  
-  onAddItem(localIngredientName:HTMLInputElement) {
-    event.preventDefault()
-    this.shoppingListService.addIngredient({
-      name: localIngredientName.value,
-      amount: this.localIngredientAmount.nativeElement.value
-    });
+  ngOnInit(): void {
+    console.log(this.ingredientsForm)
   }
+  
+  // onAddItem(localIngredientName:HTMLInputElement) {
+  //   event.preventDefault()
+  //   this.shoppingListService.addIngredient({
+  //     name: localIngredientName.value,
+  //     amount: this.localIngredientAmount.nativeElement.value
+  //   });
+  // }
 
   testFunction(formObj: NgForm){
     console.log(formObj)
