@@ -1,8 +1,9 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { ShoppingListService } from '../shopping-list.service';
 
 import { Ingredient } from '../../shared/ingredient.modle';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -12,6 +13,7 @@ import { Ingredient } from '../../shared/ingredient.modle';
 export class ShoppingEditComponent{
   // @Output('ingredientObject') outputIngValue = new EventEmitter<Ingredient>();
   @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
+  @ViewChild('formObj') ingredientsForm: NgForm;
 
   constructor(private shoppingListService: ShoppingListService) {}
   
@@ -21,14 +23,9 @@ export class ShoppingEditComponent{
       name: localIngredientName.value,
       amount: this.localIngredientAmount.nativeElement.value
     });
-    // console.log(localIngredientName.value)
-    // this.outputIngValue.emit({
-    //   name: localIngredientName.value,
-    //   amount: this.localIngredientAmount.nativeElement.value
-    // });
   }
 
-  testFunction(formObj){
+  testFunction(formObj: NgForm){
     console.log(formObj)
   }
 }
@@ -48,3 +45,10 @@ export class ShoppingEditComponent{
 //   this.ingredientAmount = (<HTMLInputElement>event.target).value
 //   // console.log(this.ingredientAmount)
 // }
+
+
+// Lines of Code when we use EventEmitter:
+// console.log(localIngredientName.value)
+// this.outputIngValue.emit({
+//   amount: this.localIngredientAmount.nativeElement.value
+// });
