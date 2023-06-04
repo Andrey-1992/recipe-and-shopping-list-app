@@ -28,8 +28,8 @@ export class ShoppingEditComponent implements OnInit{
   //   });
   // }
 
-  testFunction(formObj: NgForm){
-    console.log(formObj)
+  testFunction(){
+    console.log(this.ingredientsForm)
   }
 }
 
