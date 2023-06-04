@@ -29,10 +29,10 @@ export class ShoppingEditComponent implements OnInit{
   // }
   onAddItem() {
     event.preventDefault()
-    console.log(this.ingredientsForm)
+    // console.log(this.ingredientsForm.controls.ingredientName.value)
     this.shoppingListService.addIngredient({
-      name: this.ingredientsForm.controls.ingredientName,
-      amount: this.ingredientsForm.controls.ingredientAmount,
+      name: this.ingredientsForm.controls.ingredientName.value,
+      amount: this.ingredientsForm.controls.ingredientAmount.value,
     });
   }
 
