@@ -27,6 +27,10 @@ export class ShoppingEditComponent{
     //   amount: this.localIngredientAmount.nativeElement.value
     // });
   }
+
+  testFunction(formObj){
+    console.log(formObj)
+  }
 }
 
 
