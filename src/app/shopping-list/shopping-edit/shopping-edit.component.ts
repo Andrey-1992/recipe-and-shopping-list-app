@@ -27,10 +27,15 @@ export class ShoppingEditComponent implements OnInit{
   //     amount: this.localIngredientAmount.nativeElement.value
   //   });
   // }
-
-  testFunction(){
+  onAddItem() {
+    event.preventDefault()
     console.log(this.ingredientsForm)
+    // this.shoppingListService.addIngredient({
+    //   name: localIngredientName.value,
+    //   amount: this.localIngredientAmount.nativeElement.value
+    // });
   }
+
 }
 
 
