@@ -55,7 +55,7 @@ export class ShoppingEditComponent implements OnInit{
 // });
 
 
-// Previous solution to create new ingredietns without usgin the FormControl Approach:
+// Previous solution to create new ingredietns without usgin the FormControl Approach:g
  // onAddItem(localIngredientName:HTMLInputElement) {
   //   event.preventDefault()
   //   this.shoppingListService.addIngredient({
