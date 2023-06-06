@@ -9,8 +9,12 @@
           class="form-control"
           ngModel
           name="ingredientName"
+          #ingredientName=ngModel
           required
         >
+        <p *ngIf="!ingredientName.valid && ingredientName.touched">
+          Please add ingredient name !
+        </p>
       </div>
       <div class="col-sm-5 form-group">
         <label for="amount">Amount</label>
@@ -20,8 +24,12 @@
           class="form-control"
           ngModel
           name="ingredientAmount"
+          #ingredientAmount=ngModel
           required
         >
+        <p *ngIf="!ingredientAmount.valid && ingredientAmount.touched">
+          Please add amount !
+        </p>
       </div>
       <div class="row">
         <div class="col-xs-12">
