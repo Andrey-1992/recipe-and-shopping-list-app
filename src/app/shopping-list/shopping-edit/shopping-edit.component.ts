@@ -18,11 +18,16 @@ export class ShoppingEditComponent {
   
   onAddItem() {
     event.preventDefault()
-    console.log(this.ingredientsForm)
+    // console.log(this.ingredientsForm)
     this.shoppingListService.addIngredient({
       name: this.ingredientsForm.controls.ingredientName.value,
       amount: this.ingredientsForm.controls.ingredientAmount.value,
     });
+  }
+
+  clearForm() {
+    // console.log(this.ingredientsForm)
+    this.ingredientsForm.reset();
   }
   
 }
