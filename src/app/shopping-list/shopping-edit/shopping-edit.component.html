@@ -20,7 +20,7 @@
           class="form-control"
           ngModel
           name="ingredientAmount"
-          reuired
+          required
         >
       </div>
       <div class="row">
@@ -28,6 +28,7 @@
           <button 
             class="btn btn-success"
             type="submit"
+            [disabled]="!formObj.valid"
           >Add</button>
           <button class="btn btn-danger" type="button">Delete</button>
           <button class="btn btn-primary" type="button">Clear</button>

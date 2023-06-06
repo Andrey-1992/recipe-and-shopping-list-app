@@ -18,7 +18,7 @@ export class ShoppingEditComponent {
   
   onAddItem() {
     event.preventDefault()
-    // console.log(this.ingredientsForm.controls.ingredientName.value)
+    console.log(this.ingredientsForm)
     this.shoppingListService.addIngredient({
       name: this.ingredientsForm.controls.ingredientName.value,
       amount: this.ingredientsForm.controls.ingredientAmount.value,
