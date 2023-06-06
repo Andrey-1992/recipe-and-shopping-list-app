@@ -11,7 +11,7 @@ import { NgFor } from '@angular/common';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent {
-  @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
+  // @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
   @ViewChild('formObj') ingredientsForm: NgForm;
   
   constructor(private shoppingListService: ShoppingListService) {}
