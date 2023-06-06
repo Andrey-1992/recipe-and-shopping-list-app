@@ -1,18 +1,20 @@
 <div class="row"> 
   <div col-xs-10>
-    <!-- <app-shopping-edit
-      (ingredientObject)="onPassedValue($event)">
-    </app-shopping-edit> -->
     <app-shopping-edit></app-shopping-edit>
     <hr>
     <ul class="list-group">
       <a 
-        class="list-group-item"  
-        style="cursor: pointer;"
-        *ngFor="let ingredient of ingredients">
-        {{ingredient.name}} ({{ingredient.amount}})
-      </a>
-    </ul>
-  </div>
+      class="list-group-item"  
+      style="cursor: pointer;"
+      *ngFor="let ingredient of ingredients">
+      {{ingredient.name}} ({{ingredient.amount}})
+    </a>
+  </ul>
+</div>
 </div> 
 
+
+<!-- Previous solution using Event Emitter
+<app-shopping-edit
+  (ingredientObject)="onPassedValue($event)">
+</app-shopping-edit> -->

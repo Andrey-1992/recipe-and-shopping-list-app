@@ -11,10 +11,9 @@ import { NgFor } from '@angular/common';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent {
-  // @Output('ingredientObject') outputIngValue = new EventEmitter<Ingredient>();
   @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
   @ViewChild('formObj') ingredientsForm: NgForm;
-
+  
   constructor(private shoppingListService: ShoppingListService) {}
   
   onAddItem() {
@@ -25,7 +24,7 @@ export class ShoppingEditComponent {
       amount: this.ingredientsForm.controls.ingredientAmount.value,
     });
   }
-
+  
 }
 
 
@@ -35,10 +34,11 @@ export class ShoppingEditComponent {
 // ingredientAmount:string;
 //
 // incomningNameInput(event: Event) {
-//   this.ingredientName = (<HTMLInputElement>event.target).value
-//   // console.log(this.ingredientName)
-// }
-
+  //   this.ingredientName = (<HTMLInputElement>event.target).value
+  //   // console.log(this.ingredientName)
+  // }
+  
+// @Output('ingredientObject') outputIngValue = new EventEmitter<Ingredient>();
 // incomningAmountInput(event: Event) {
 //   this.ingredientAmount = (<HTMLInputElement>event.target).value
 //   // console.log(this.ingredientAmount)
