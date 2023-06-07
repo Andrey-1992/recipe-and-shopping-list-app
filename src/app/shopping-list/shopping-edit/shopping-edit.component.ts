@@ -16,6 +16,7 @@ export class ShoppingEditComponent implements OnInit{
   subscription: Subscription;
   editMode = false;
   editedItemIndex: number;
+  editItem: Ingredient;
   
   constructor(private shoppingListService: ShoppingListService) {}
 
