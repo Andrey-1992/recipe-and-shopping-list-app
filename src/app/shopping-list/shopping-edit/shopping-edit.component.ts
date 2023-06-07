@@ -26,6 +26,8 @@ export class ShoppingEditComponent implements OnInit{
         (index: number) => {
           this.editMode = true;
           this.editedItemIndex = index;
+          this.editItem = this.shoppingListService.getIngredient(index);
+          console.log(this.editItem)
         }
       );
   }
