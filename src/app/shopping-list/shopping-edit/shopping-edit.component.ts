@@ -1,7 +1,7 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ShoppingListService } from '../shopping-list.service';
-
+// import { Subscription } from 'rxjs/Subscription';
 import { Ingredient } from '../../shared/ingredient.modle';
 import { NgFor } from '@angular/common';
 
@@ -10,11 +10,16 @@ import { NgFor } from '@angular/common';
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css']
 })
-export class ShoppingEditComponent {
+export class ShoppingEditComponent implements OnInit{
   // @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
   @ViewChild('formObj') ingredientsForm: NgForm;
   
   constructor(private shoppingListService: ShoppingListService) {}
+
+  ngOnInit(): void {
+    this.shoppingListService.startedEditing
+      .subscribe();
+  }
   
   onAddItem() {
     event.preventDefault()
