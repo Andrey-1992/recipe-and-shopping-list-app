@@ -49,8 +49,8 @@ export class ShoppingEditComponent implements OnInit{
   }
 
   clearForm() {
-    // console.log(this.ingredientsForm)
     this.ingredientsForm.reset();
+    this.editMode = false;
   }
 
   ngOnDestroy():void {
