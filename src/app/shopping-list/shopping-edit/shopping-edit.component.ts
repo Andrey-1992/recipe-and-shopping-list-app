@@ -14,12 +14,19 @@ export class ShoppingEditComponent implements OnInit{
   // @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
   @ViewChild('formObj') ingredientsForm: NgForm;
   subscription: Subscription;
+  editMode = false;
+  editedItemIndex: number;
   
   constructor(private shoppingListService: ShoppingListService) {}
 
   ngOnInit(): void {
     this.subscription = this.shoppingListService.startedEditing
-      .subscribe();
+      .subscribe(
+        (index: number) => {
+          this.editMode = true;
+          this.editedItemIndex = index;
+        }
+      );
   }
   
   onAddItem() {
