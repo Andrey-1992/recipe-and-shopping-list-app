@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ShoppingListService } from '../shopping-list.service';
-// import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { Ingredient } from '../../shared/ingredient.modle';
 import { NgFor } from '@angular/common';
 
@@ -13,11 +13,12 @@ import { NgFor } from '@angular/common';
 export class ShoppingEditComponent implements OnInit{
   // @ViewChild('localIngredientAmount') localIngredientAmount: ElementRef;
   @ViewChild('formObj') ingredientsForm: NgForm;
+  subscription: Subscription;
   
   constructor(private shoppingListService: ShoppingListService) {}
 
   ngOnInit(): void {
-    this.shoppingListService.startedEditing
+    this.subscription = this.shoppingListService.startedEditing
       .subscribe();
   }
   
@@ -33,6 +34,10 @@ export class ShoppingEditComponent implements OnInit{
   clearForm() {
     // console.log(this.ingredientsForm)
     this.ingredientsForm.reset();
+  }
+
+  ngOnDestroy():void {
+    this.subscription.unsubscribe();
   }
   
 }
