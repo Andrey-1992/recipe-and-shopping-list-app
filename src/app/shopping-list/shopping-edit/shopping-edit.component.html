@@ -38,7 +38,9 @@
             class="btn btn-success"
             type="submit"
             [disabled]="!formObj.valid"
-          >Add</button>
+          >
+          {{ editMode ? 'Update' : 'Add'}}
+        </button>
           <button class="btn btn-danger" type="button">Delete</button>
           <button class="btn btn-primary" type="button" (click)="clearForm()">Clear</button>
         </div>
