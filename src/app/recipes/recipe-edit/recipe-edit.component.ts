@@ -28,10 +28,14 @@ export class RecipeEditComponent implements OnInit {
 
   private initForm() {
     let recipeName = '';
+    let recipeImgPath = '';
+    let recipeDescription = '';
     
     if (this.editMode) {
       const recipe = this.recipeService.getRecipe(this.id);
       recipeName = recipe.name;
+      recipeImgPath = recipe.imgPath;
+      recipeDescription = recipe.description;
     }
 
     this.recipeForm = new FormGroup({
