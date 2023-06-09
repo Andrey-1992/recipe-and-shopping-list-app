@@ -37,7 +37,7 @@ export class ShoppingEditComponent implements OnInit{
   
   onSubmit(formObj: NgForm) {
     const value = formObj.value;
-    console.log(value)
+    // console.log(value)
     const newIngredient = new Ingredient(value.ingredientName, value.ingredientAmount);
     if(this.editMode) {
       this.shoppingListService.updateIngredient(this.editedItemIndex, newIngredient)
