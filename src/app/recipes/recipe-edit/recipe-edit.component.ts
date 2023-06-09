@@ -21,7 +21,7 @@ export class RecipeEditComponent implements OnInit {
       .subscribe((params: Params) => {
         this.id = +params['id'];
         this.editMode = params['id'] != null;
-        !this.editMode ? this.componentState = 'New Status' : this.componentState = 'Edit Status'
+        this.initForm();
       }
     )
   }
@@ -43,6 +43,8 @@ export class RecipeEditComponent implements OnInit {
       'imgPath': new FormControl(recipeImgPath),
       'description': new FormControl(recipeDescription)
     })
+    console.log(this.recipeForm)
   }
+
 
 }
