@@ -37,7 +37,7 @@ export class RecipeEditComponent implements OnInit {
       recipeImgPath = recipe.imgPath;
       recipeDescription = recipe.description;
       if (recipe['ingredients']) {
-        console.log(recipe.ingredients)
+        // console.log(recipe.ingredients)
         for (let ingredient of recipe.ingredients) {
           recipeIngredients.push(
             new FormGroup({
@@ -46,7 +46,7 @@ export class RecipeEditComponent implements OnInit {
             })
           );
         }
-        console.log(recipeIngredients)
+        // console.log(recipeIngredients)
       }
     }
 
@@ -56,7 +56,7 @@ export class RecipeEditComponent implements OnInit {
       'description': new FormControl(recipeDescription),
       'ingredients': recipeIngredients
     })
-    console.log(this.recipeForm)
+    // console.log(this.recipeForm)
   }
 
   onSubmit() {
