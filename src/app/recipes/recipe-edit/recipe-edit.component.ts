@@ -46,6 +46,7 @@ export class RecipeEditComponent implements OnInit {
             })
           );
         }
+        console.log(recipeIngredients)
       }
     }
 
