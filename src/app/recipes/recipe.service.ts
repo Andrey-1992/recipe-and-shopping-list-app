@@ -44,4 +44,8 @@ export class RecipeService {
     // console.log(ingredients)
     this.slService.addIngredients(ingredients)
   } 
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+  }
 };
