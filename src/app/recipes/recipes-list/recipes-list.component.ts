@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
@@ -8,7 +8,7 @@ import { RecipeService } from '../recipe.service';
   templateUrl: './recipes-list.component.html',
   styleUrls: ['./recipes-list.component.css']
 })
-export class RecipesListComponent implements OnInit{
+export class RecipesListComponent implements OnInit, OnDestroy{
   recipes: Recipe[]
   
   constructor(private recipeService: RecipeService,
@@ -28,6 +28,10 @@ export class RecipesListComponent implements OnInit{
   
   onNewRecipe() {
     this.router.navigate(['new'], {relativeTo: this.route})
+  }
+
+  ngOnDestroy() {
+    
   }
   
 }
