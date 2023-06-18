@@ -40,7 +40,7 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="form-group">
-              <img [src]="imgPath.value" class="img-responsive">
+              <img [src]="imagePath.value" class="img-responsive">
             </div>
           </div>
         </div>
@@ -81,7 +81,11 @@
                 >
               </div>
               <div class="col-xs-2">
-                <button class="btn btn-danger">X</button>
+                <button   
+                  class="btn btn-danger"
+                  type="button"
+                  (click)="onDeleteIngredient()"
+                >X</button>
               </div>
             </div>
           </div>
