@@ -15,6 +15,6 @@ export class DataStorageService {
 
   fetchRecipes() {
     this.http.get('https://udemy-recipe-course-f2d4f-default-rtdb.firebaseio.com/recipes.json')
-    .subscribe(response => { console.log(response) })
+    .subscribe(response => { this.recipeService.setRecipes(response) })
   }
 };
