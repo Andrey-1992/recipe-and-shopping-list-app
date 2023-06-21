@@ -26,6 +26,7 @@ export class RecipesListComponent implements OnInit, OnDestroy{
         }
       )
     this.recipes = this.recipeService.getRecipes();
+    //Check this line of code, probably can be removed. 
   }
   
   onNewRecipe() {
