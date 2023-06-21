@@ -12,4 +12,8 @@ export class DataStorageService {
     this.http.put('https://udemy-recipe-course-f2d4f-default-rtdb.firebaseio.com/recipes.json', recipes)
       .subscribe(response => { console.log(response) })
   }
+
+  fetchRecipes() {
+    
+  }
 };
