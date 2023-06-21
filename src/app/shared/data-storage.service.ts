@@ -7,7 +7,7 @@ import { RecipeService } from "../recipes/recipe.service";
 export class DataStorageService {
   constructor(private http: HttpClient, private recipeService: RecipeService) {}
 
-  storeRecipes(recipes: Recipe[]) {
-
+  storeRecipes() {
+    const recipes = this.recipeService.getRecipes();
   }
 };
