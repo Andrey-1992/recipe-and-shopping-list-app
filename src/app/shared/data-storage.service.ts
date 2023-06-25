@@ -16,8 +16,10 @@ export class DataStorageService {
 
   fetchRecipes() {
     this.http.get<Recipe[]>('https://udemy-recipe-course-f2d4f-default-rtdb.firebaseio.com/recipes.json')
-    .pipe(map(recipes =. {
-      
+    .pipe(map(recipes => {
+      return recipes.map(recipe => {
+        return {...recipe, ingredients: recipe.ingredients ? recipe.ingredients : []}
+      });
     }))
     .subscribe(response => { this.recipeService.setRecipes(response) })
   }
