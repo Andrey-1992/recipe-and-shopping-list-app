@@ -12,7 +12,6 @@ export class RecipesDetailComponent implements OnInit{
   // @Input('childRecipe') recipe: Recipe;
 
   open:boolean = true;
-
   id: number;
   selectedRecipe: any;
   index: number;

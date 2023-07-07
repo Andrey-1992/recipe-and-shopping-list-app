@@ -13,9 +13,10 @@ export class RecipesListComponent implements OnInit, OnDestroy{
   recipes: Recipe[];
   subscription: Subscription;
   
-  constructor(private recipeService: RecipeService,
-              private router: Router,
-              private route: ActivatedRoute
+  constructor(
+    private recipeService: RecipeService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
   
   ngOnInit() {
@@ -26,6 +27,7 @@ export class RecipesListComponent implements OnInit, OnDestroy{
         }
       )
     this.recipes = this.recipeService.getRecipes();
+    //Check this line of code, probably can be removed. 
   }
   
   onNewRecipe() {

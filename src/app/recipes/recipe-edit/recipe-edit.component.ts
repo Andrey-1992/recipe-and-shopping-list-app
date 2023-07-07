@@ -23,7 +23,7 @@ export class RecipeEditComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .subscribe((params: Params) => {
-        console.log(params)
+        // console.log(params)
         this.id = +params['id'];
         this.editMode = params['id'] != null;
         this.initForm();
@@ -87,7 +87,7 @@ export class RecipeEditComponent implements OnInit {
     (<FormArray>this.recipeForm.get('ingredients')).push(
       new FormGroup({
         'name': new FormControl(null, Validators.required),
-        'amoutn': new FormControl(null, [
+        'amount': new FormControl(null, [
           Validators.required,
           // Validators.pattern(/^[1-9]+[0-9}*$/)
         ])
