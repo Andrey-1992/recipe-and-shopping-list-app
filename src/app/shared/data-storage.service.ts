@@ -15,15 +15,32 @@ export class DataStorageService {
   }
 
   fetchRecipes() {
-    return this.http.get<Recipe[]>('https://udemy-recipe-course-f2d4f-default-rtdb.firebaseio.com/recipes.json')
-    .pipe(map(recipes => {
-      return recipes.map(recipe => {
-        return {...recipe, ingredients: recipe.ingredients ? recipe.ingredients : []}
+    this.http.get<Recipe[]>('https://udemy-recipe-course-f2d4f-default-rtdb.firebaseio.com/recipes.json')
+    .pipe(
+      map(recipes => {
+        return recipes.map(recipe => {
+          return {  
+            ...recipe, 
+            ingredients: recipe.ingredients ? recipe.ingredients : []
+          }
         });
-      }),
-      tap(recipes => {
-        this.recipeService.setRecipes(recipes)
       })
     )
+    .subscribe(recipes => {
+      this.recipeService.setRecipes(recipes)
+    })
   }
+
+  // fetchRecipes() {
+  //   return this.http.get<Recipe[]>('https://udemy-recipe-course-f2d4f-default-rtdb.firebaseio.com/recipes.json')
+  //   .pipe(map(recipes => {
+  //     return recipes.map(recipe => {
+  //       return {...recipe, ingredients: recipe.ingredients ? recipe.ingredients : []}
+  //       });
+  //     }),
+  //     tap(recipes => {
+  //       this.recipeService.setRecipes(recipes)
+  //     })
+  //   )
+  // }
 };

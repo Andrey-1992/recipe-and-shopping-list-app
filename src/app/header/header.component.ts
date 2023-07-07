@@ -16,7 +16,7 @@ export class HeaderComponent {
   }
 
   onFetchData() {
-    this.dataStorageService.fetchRecipes().subscribe();
+    this.dataStorageService.fetchRecipes();
   }
 
   // @Output('internalFeatureSelected') featureSelected = new EventEmitter<string>();
