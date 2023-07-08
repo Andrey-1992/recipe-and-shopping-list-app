@@ -4,8 +4,8 @@ import { Injectable } from "@angular/core";
 @Injectable({providedIn: 'root'})
 export class AuthService {
   constructor(private http: HttpClient) {}
-  
-  signup() {
 
+  signup() {
+    this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[AIzaSyBhYUKS4rQxvaPutmFUDsFgnJ6ZWpg6oNM]')
   }
 };
