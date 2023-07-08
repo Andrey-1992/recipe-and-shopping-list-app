@@ -5,7 +5,14 @@ import { Injectable } from "@angular/core";
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  signup() {
-    this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[AIzaSyBhYUKS4rQxvaPutmFUDsFgnJ6ZWpg6oNM]')
+  signup(email:string, password: string) {
+    this.http.post(
+      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBhYUKS4rQxvaPutmFUDsFgnJ6ZWpg6oNMg',
+      {
+        email: email,
+        password: password,
+        returnSecureToken: true
+      }
+    )
   }
 };
