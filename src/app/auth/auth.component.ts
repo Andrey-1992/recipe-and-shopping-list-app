@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { AuthService } from "./auth.service";
 
 @Component({
   selector: 'app-auth',
@@ -7,7 +8,7 @@ import { NgForm } from "@angular/forms";
 })
 
 export class AuthComponent {
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   isLoginMode = true;
 
@@ -17,6 +18,11 @@ export class AuthComponent {
 
   onSubmit(form: NgForm){
     console.log(form.value);
+    if (!form.valid) {
+      return;
+    }
+    const email = form.value.email;
+    const password = form.value.password;
     form.reset();
   }
 
