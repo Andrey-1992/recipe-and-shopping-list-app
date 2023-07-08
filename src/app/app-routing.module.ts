@@ -11,14 +11,14 @@ import { AuthComponent } from "./auth/auth.component";
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/recipes', pathMatch:'full'},
-  {path: 'shopping-list', component: ShoppingListComponent},
   {path: 'recipes', component: RecipesComponent, children: [
     {path: '', component: RecipeStartComponent},
     {path: 'new', component: RecipeEditComponent},
     {path: ':id', component: RecipesDetailComponent, resolve: [RecipeResolverService]},
     {path: ':id/edit', component: RecipeEditComponent, resolve: [RecipeResolverService]},
-    {path: 'auth', component: AuthComponent},
   ]},
+  {path: 'shopping-list', component: ShoppingListComponent},
+  {path: 'auth', component: AuthComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
