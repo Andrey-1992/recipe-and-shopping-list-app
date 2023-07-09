@@ -36,12 +36,12 @@ export class AuthComponent {
           console.log(resData);
           this.isLoading = false;
         },
-        errorRes => {
-          console.log(errorRes);
-          switch (errorRes.error.error.message) {
-            case 'EMAIL_EXISTS':
-              this.error = "This email exists already!"
-          }
+        errorMessage => {
+          console.log(errorMessage);
+          // switch (errorRes.error.error.message) {
+          //   case 'EMAIL_EXISTS':
+          // }
+          this.error = errorMessage;
           this.isLoading = false;
         }
       );
