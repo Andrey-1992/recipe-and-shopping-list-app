@@ -47,6 +47,12 @@ export class AuthService {
     ).pipe(catchError(this.handleError));
   }
 
+  private handleAuthentication(email:string, userId: string, token: string, expiresIn: number) {
+    const expirationDate = new Date(new Date().getTime() + +expiresIn * 1000);
+    const user = new User(email, userId, token, expirationDate);
+    this.user.next(user);
+  }
+
   private handleError(errorRes: HttpErrorResponse) {
     let errorMessage = "An Unknown error ocurred!";
       if (!errorRes.error || !errorRes.error.error) {
