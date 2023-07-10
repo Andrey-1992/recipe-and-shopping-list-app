@@ -19,7 +19,7 @@ export class AuthComponent {
   }
 
   onSubmit(form: NgForm){
-    console.log(form.value);
+    // console.log(form.value);
     if (!form.valid) {
       return;
     }
@@ -38,9 +38,6 @@ export class AuthComponent {
         },
         errorMessage => {
           console.log(errorMessage);
-          // switch (errorRes.error.error.message) {
-          //   case 'EMAIL_EXISTS':
-          // }
           this.error = errorMessage;
           this.isLoading = false;
         }
