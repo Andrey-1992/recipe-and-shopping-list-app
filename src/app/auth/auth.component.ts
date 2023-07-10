@@ -32,9 +32,9 @@ export class AuthComponent {
     this.isLoading = true;
 
     if (this.isLoginMode) {
-      this.authService.login(email, password)
+      authObj = this.authService.login(email, password)
     } else {
-      this.authService.signup(email, password)
+      authObj = this.authService.signup(email, password)
     }
 
     authObj.subscribe(
