@@ -32,30 +32,22 @@ export class AuthComponent {
     this.isLoading = true;
 
     if (this.isLoginMode) {
-      this.authService.login(email, password).subscribe(
-        resData => {
-          console.log(resData);
-          this.isLoading = false;
-        },
-        errorMessage => {
-          console.log(errorMessage);
-          this.error = errorMessage;
-          this.isLoading = false;
-        }
-      );
+      this.authService.login(email, password)
     } else {
-      this.authService.signup(email, password).subscribe(
-        resData => {
-          console.log(resData);
-          this.isLoading = false;
-        },
-        errorMessage => {
-          console.log(errorMessage);
-          this.error = errorMessage;
-          this.isLoading = false;
-        }
-      );
+      this.authService.signup(email, password)
     }
+
+    authObj.subscribe(
+      resData => {
+        console.log(resData);
+        this.isLoading = false;
+      },
+      errorMessage => {
+        console.log(errorMessage);
+        this.error = errorMessage;
+        this.isLoading = false;
+      }
+    );
 
     form.reset();
   }
