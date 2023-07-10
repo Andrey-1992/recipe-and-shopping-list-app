@@ -30,9 +30,7 @@ export class AuthService {
       }
     )
     .pipe(catchError(this.handleError), tap(resData => {
-      const expirationDate = new Date(new Date().getTime() + +resData.expiresIn * 1000);
-      const user = new User(resData.email, resData.localId, resData.idToken, expirationDate);
-      this.user.next(user);
+      this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)
     }))
   }
 
@@ -44,7 +42,9 @@ export class AuthService {
         password: password,
         returnSecureToken: true
       }
-    ).pipe(catchError(this.handleError));
+    ).pipe(catchError(this.handleError), tap(resData => {
+      this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)
+    }));
   }
 
   private handleAuthentication(email:string, userId: string, token: string, expiresIn: number) {
