@@ -5,4 +5,12 @@ export class User {
     private _token: string,
     private _tokenExpiratationDate: Date
   ){}
+
+  // user.token = get token() => that ius why is private
+  token() {
+    if (!this._tokenExpiratationDate || new Date() > this._tokenExpiratationDate) {
+      return null;
+    }
+    return this._token;
+  }
 }
