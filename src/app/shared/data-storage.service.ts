@@ -19,7 +19,7 @@ export class DataStorageService {
     return this.authService.user.pipe(
     take(1), 
     exhaustMap(user => {
-      this.http.get<Recipe[]>('https://udemy-recipe-course-f2d4f-default-rtdb.firebaseio.com/recipes.json?auth=?auth' + user.token)
+      return this.http.get<Recipe[]>('https://udemy-recipe-course-f2d4f-default-rtdb.firebaseio.com/recipes.json?auth=?auth' + user.token);
       // ,{
       //   params: new HttpParams().set('auth', user.token)
       // })
