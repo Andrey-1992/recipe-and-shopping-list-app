@@ -16,14 +16,12 @@ export class DataStorageService {
   }
 
   fetchRecipes() {
-    return this.authService.user.pipe(
-    take(1), 
-    exhaustMap(user => {
-      return this.http.get<Recipe[]>('https://udemy-recipe-course-f2d4f-default-rtdb.firebaseio.com/recipes.json?auth=?auth' + user.token);
-      // ,{
-      //   params: new HttpParams().set('auth', user.token)
-      // })
-    }),
+    // return this.authService.user.pipe(
+    // take(1), 
+    // exhaustMap(user => {
+    //   return this.http
+      return this.http.get<Recipe[]>('https://udemy-recipe-course-f2d4f-default-rtdb.firebaseio.com/recipes.json?auth=?auth')
+    .pipe(
       map(recipes => {
         return recipes.map(recipe => {
           return {  
