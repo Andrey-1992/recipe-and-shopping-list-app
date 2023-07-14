@@ -21,7 +21,7 @@ export class AuthComponent {
   isLoginMode = true;
   isLoading = false;
   error : string  = null;
-  @ViewChild(PlaceholderDirective, {static: false}) private alertHost: PlaceholderDirective;
+  @ViewChild(PlaceholderDirective, {static: false}) alertHost: PlaceholderDirective;
   
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
