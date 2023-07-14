@@ -21,7 +21,7 @@ export class AuthComponent {
   isLoginMode = true;
   isLoading = false;
   error : string  = null;
-  @ViewChild(PlaceholderDirective) alertHost: PlaceholderDirective;
+  @ViewChild(PlaceholderDirective, {static: false}) private alertHost: PlaceholderDirective;
   
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
@@ -70,6 +70,9 @@ export class AuthComponent {
     const alertComponentFactory = this.componentFactoryResolver.resolveComponentFactory(
       AlertComponent
     );
+    const hostViewContainerRef = this.alertHost.viewContainerRef
+    hostViewContainerRef.clear();
+    hostViewContainerRef.createComponent(alertComponentFactory);
   }
 
 };
