@@ -1,8 +1,9 @@
-import { Component, ComponentFactory, ComponentFactoryResolver } from "@angular/core";
+import { Component, ComponentFactory, ComponentFactoryResolver, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { AlertComponent } from "../shared/alert/alert.component";
+import { PlaceholderDirective } from "../shared/placeholder/placeholder.directive";
 import { AuthService , AuthResponseData} from "./auth.service";
 
 @Component({
@@ -20,7 +21,8 @@ export class AuthComponent {
   isLoginMode = true;
   isLoading = false;
   error : string  = null;
-
+  @ViewChild(PlaceholderDirective) alertHost: PlaceholderDirective;
+  
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
   }
