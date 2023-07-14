@@ -2,6 +2,7 @@ import { Component, ComponentFactory, ComponentFactoryResolver } from "@angular/
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
+import { AlertComponent } from "../shared/alert/alert.component";
 import { AuthService , AuthResponseData} from "./auth.service";
 
 @Component({
@@ -13,7 +14,7 @@ export class AuthComponent {
   constructor(
     private authService: AuthService, 
     private router: Router,
-    private componentFactoryResolver:ComponentFactoryResolver;
+    private componentFactoryResolver:ComponentFactoryResolver
   ) {}
 
   isLoginMode = true;
@@ -64,7 +65,9 @@ export class AuthComponent {
   }
 
   private showErrorAlert(message: string) {
-
+    const alertComponentFactory = this.componentFactoryResolver.resolveComponentFactory(
+      AlertComponent
+    );
   }
 
 };
