@@ -70,7 +70,7 @@ export class AuthComponent {
     const alertComponentFactory = this.componentFactoryResolver.resolveComponentFactory(
       AlertComponent
     );
-    const hostViewContainerRef = this.alertHost.viewContainerRef
+    const hostViewContainerRef = this.alertHost.viewContainerRef;
     hostViewContainerRef.clear();
     hostViewContainerRef.createComponent(alertComponentFactory);
   }
