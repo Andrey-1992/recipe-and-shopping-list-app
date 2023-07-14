@@ -1,7 +1,7 @@
 import { Component, ComponentFactory, ComponentFactoryResolver, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
-import { Observable } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 import { AlertComponent } from "../shared/alert/alert.component";
 import { PlaceholderDirective } from "../shared/placeholder/placeholder.directive";
 import { AuthService , AuthResponseData} from "./auth.service";
@@ -22,6 +22,7 @@ export class AuthComponent {
   isLoading = false;
   error : string  = null;
   @ViewChild(PlaceholderDirective, {static: false}) alertHost: PlaceholderDirective;
+  private closeSub: Subscription;
   
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
@@ -74,6 +75,10 @@ export class AuthComponent {
     hostViewContainerRef.clear();
     const componentRef = hostViewContainerRef.createComponent(alertComponentFactory);
     componentRef.instance.message = message;
+    componentRef.instance.close.subscribe(() => {
+      this.closeSub.unsubscribe();
+      hostViewContainerRef.clear();
+    })
   }
 
 };
