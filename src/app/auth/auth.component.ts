@@ -67,6 +67,12 @@ export class AuthComponent {
     this.error = null;
   }
 
+  ngOnDestroy() {
+    if (this.closeSub) {
+      this.closeSub.unsubscribe();
+    }
+  }
+
   private showErrorAlert(message: string) {
     const alertComponentFactory = this.componentFactoryResolver.resolveComponentFactory(
       AlertComponent
